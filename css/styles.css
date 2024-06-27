@@ -1,22 +1,44 @@
 .holder {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
-  }
+  width: 100%;
+  border: 6px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 100px 100px 0px 0px;
   
-  .item1 { grid-area: 1 / 1 / 2 / 2; }
-  .item2 { grid-area: 1 / 2 / 2 / 3; }
-  .item3 { grid-area: 1 / 3 / 2 / 4; }
-  .item4 { grid-area: 2 / 1 / 3 / 2; }
-  .item5 { grid-area: 2 / 2 / 3 / 4; }
-  .item6 { grid-area: 3 / 1 / 4 / 4; }
-  
-  /* Пример для демонстрации */
-  .item1, .item2, .item3, .item4, .item5, .item6 {
-    background: lightblue;
-    border: 1px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+}
+
+.item {
+  background-color: tomato;
+  flex-grow: 1;
+  height: 200px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:nth-child(1) {
+  order: -3;
+  flex-basis: calc(100%/2);
+  border-radius: 100px 0 0;
+}
+
+.item:nth-child(2) {
+  background-color: blue;
+}
+
+.item:nth-child(3) {
+  background-color: violet;
+  order: -1;
+}
+
+.item:nth-child(4) {
+  background-color: green;
+}
+
+.item:nth-child(5) {
+  background-color: yellow;
+  order: -2;
+  flex-basis: calc(100%/2);
+  border-radius: 0px 100px 0px 0px;
+}
